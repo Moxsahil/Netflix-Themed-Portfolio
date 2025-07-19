@@ -21,8 +21,7 @@ const ProfilePage: React.FC = () => {
         className="profile-page"
         style={{ backgroundImage: `url(${backgroundGif})` }}
       >
-        <ProfileBanner
-        />
+        <ProfileBanner />
       </div>
       <TopPicksRow profile={profile} />
       <ContinueWatching profile={profile} />

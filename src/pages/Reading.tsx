@@ -3,11 +3,11 @@
 import React from 'react';
 import './Reading.css';
 import atomicHabits from '../images/atomic_habits.jpg';
-import richDadPoorDad from '../images/rich_dad_poor_dad.jpg';
-import alchemist from '../images/alchemist.jpg';
-import eatThatFrog from '../images/eat_that_frog.jpg';
-import vijayanikiAidhuMetlu from '../images/vijayaniki_aidu_metlu.jpg';
-import venneloAdapilla from '../images/vennelo_adapilla.jpeg';
+import Cant_Hurt_Me from '../images/Cant_Hurt_Me.jpeg';
+import The_subtle from '../images/The_subtle.jpeg';
+import Never_finished from '../images/Never_finished.jpeg';
+import Think_Like_a_programmer from '../images/Think_Like_a_programmer.png';
+import Software_Engineering_at_Google from '../images/Software_Engineering_at_Google.png';
 
 const books = [
   {
@@ -17,34 +17,34 @@ const books = [
     description: "A practical guide to building good habits and breaking bad ones.",
   },
   {
-    title: "Rich Dad Poor Dad",
-    author: "Robert Kiyosaki",
-    imgSrc: richDadPoorDad,
-    description: "An eye-opener on wealth, assets, and financial literacy.",
+    title: "Can't Hurt Me",
+    author: "David Goggins",
+    imgSrc: Cant_Hurt_Me,
+    description: "A practical guide to mastering your mind, embracing pain, and unlocking your full potential through mental toughness.",
   },
   {
-    title: "The Alchemist",
-    author: "Paulo Coelho",
-    imgSrc: alchemist,
-    description: "A magical journey of following one's dreams.",
+    title: "Think Like a programmer",
+    author: "V. Anton Spraul",
+    imgSrc: Think_Like_a_programmer,
+    description: "A hands-on approach to mastering the art of problem-solving by thinking logically and creatively like a true programmer.",
   },
   {
-    title: "Eat That Frog",
-    author: "Brian Tracy",
-    imgSrc: eatThatFrog,
-    description: "A motivational book on overcoming procrastination.",
+    title: "The Subtle art of not giving a fuck",
+    author: "Mark Manson",
+    imgSrc: The_subtle,
+    description: "A practical guide to living a better life by embracing your limitations, accepting hardships, and choosing what truly matters.",
   },
   {
-    title: "Vijayaniki Aidhu Metlu",
-    author: "Yandamoori Veerendranath",
-    imgSrc: vijayanikiAidhuMetlu,
-    description: "An inspirational Telugu book for personal growth.",
+    title: "Never Finished",
+    author: "David Goggins",
+    imgSrc: Never_finished,
+    description: "A raw guide to mastering your mind, embracing discomfort, and pushing beyond all limits.",
   },
   {
-    title: "Vennelo Adapilla",
-    author: "Yandamoori Veerendranath",
-    imgSrc: venneloAdapilla,
-    description: "A classic Telugu romantic novel that touches the heart.",
+    title: "Software Engineering at Google",
+    author: "Titus Winters, Tom Manshreck & Hyrum Wright",
+    imgSrc: Software_Engineering_at_Google,
+    description: "An in-depth look at Google's engineering practices, offering practical insights on scalable software development, teamwork, and long-term code quality."
   },
 ];
 

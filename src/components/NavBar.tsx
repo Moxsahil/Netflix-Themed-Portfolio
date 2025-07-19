@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa'; // Import icons
+import { FaHome, FaBriefcase, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa';
 import './Navbar.css';
 import netflixLogo from '../images/logo-2.png';
 import blueImage from '../images/blue.png';
+
+const IconHome = () => <FaHome />
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -64,7 +66,7 @@ const Navbar: React.FC = () => {
           <img src={netflixLogo} alt="Netflix Logo" />
         </div>
         <ul>
-          <li><Link to="/browse" onClick={closeSidebar}><FaHome /> Home</Link></li>
+          <li><Link to="/browse" onClick={closeSidebar}><IconHome /> Home</Link></li>
           <li><Link to="/work-experience" onClick={closeSidebar}><FaBriefcase /> Professional</Link></li>
           <li><Link to="/skills" onClick={closeSidebar}><FaTools /> Skills</Link></li>
           <li><Link to="/projects" onClick={closeSidebar}><FaProjectDiagram /> Projects</Link></li>
