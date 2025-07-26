@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import './ContactMe.css';
-import profilePic from '../images/me.png';
-import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
-import { ContactMe as IContactMe } from '../types';
-import { getContactMe } from '../queries/getContactMe';
+import React, { useEffect, useState } from "react";
+import "./ContactMe.css";
+import profilePic from "../images/me.png";
+import { FaEnvelope, FaPhoneAlt, FaLinkedin } from "react-icons/fa";
+import { ContactMe as IContactMe } from "../types";
+import { getContactMe } from "../queries/getContactMe";
 
 const ContactMe: React.FC = () => {
-
-  const [userData, setUserData] = useState<IContactMe>()
+  const [userData, setUserData] = useState<IContactMe>();
 
   useEffect(() => {
     async function fetchUserData() {
@@ -27,9 +26,7 @@ const ContactMe: React.FC = () => {
         <div className="badge-content">
           <h3 className="badge-name">{userData?.name}</h3>
           <p className="badge-title">{userData.title}</p>
-          <p className="badge-description">
-            {userData.summary}
-          </p>
+          <p className="badge-description">{userData.summary}</p>
           <p className="badge-company">{userData.companyUniversity}</p>
           <a
             href={userData.linkedinLink}
@@ -57,10 +54,10 @@ const ContactMe: React.FC = () => {
             {userData.phoneNumber}
           </a>
         </div>
-        <div className="contact-fun">
+        {/* <div className="contact-fun">
           <p>Or catch up over a coffee ☕</p>
           <FaCoffee className="coffee-icon" />
-        </div>
+        </div> */}
       </div>
     </div>
   );
