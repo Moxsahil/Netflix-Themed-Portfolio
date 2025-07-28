@@ -1,17 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import './Skills.css';
-import { getSkills } from '../queries/getSkills';
+import React, { useEffect, useState } from "react";
+import "./Skills.css";
+import { getSkills } from "../queries/getSkills";
 
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaGit , FaJava } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiMysql, SiGooglecloud, SiNetlify, SiHeroku, SiImessage } from 'react-icons/si';
-import { Skill } from '../types';
+import {
+  FaReact,
+  FaNodeJs,
+  FaAws,
+  FaDocker,
+  FaGit,
+  FaJava,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiPostgresql,
+  SiMysql,
+  SiGooglecloud,
+  SiNetlify,
+  SiHeroku,
+  SiImessage,
+  SiStripe,
+  SiHtml5,
+  SiVercel,
+} from "react-icons/si";
+import { Skill } from "../types";
 import { IoLogoVercel } from "react-icons/io5";
 
 const iconMap: { [key: string]: JSX.Element } = {
   FaNodeJs: <FaNodeJs />,
+
   FaJava: <FaJava />,
   FaReact: <FaReact />,
   SiTypescript: <SiTypescript />,
+  SiJavascript: <SiJavascript />,
   FaAws: <FaAws />,
   FaDocker: <FaDocker />,
   SiPostgresql: <SiPostgresql />,
@@ -20,13 +41,14 @@ const iconMap: { [key: string]: JSX.Element } = {
   SiHeroku: <SiHeroku />,
   SiNetlify: <SiNetlify />,
   SiImessage: <SiImessage />,
+  SiStripe: <SiStripe />,
   FaGit: <FaGit />,
-  IoLogoVercel: <IoLogoVercel />
+  IoLogoVercel: <IoLogoVercel />,
+  SiHtml5: <SiHtml5 />,
+  SiVercel: <SiVercel />,
 };
 
-
 const Skills: React.FC = () => {
-
   const [skillsData, setSkillsData] = useState<Skill[]>([]);
 
   useEffect(() => {
@@ -35,7 +57,7 @@ const Skills: React.FC = () => {
       setSkillsData(data);
     }
 
-    fetchSkills()
+    fetchSkills();
   }, []);
 
   if (skillsData.length === 0) return <div>Loading...</div>;
@@ -46,19 +68,33 @@ const Skills: React.FC = () => {
     return acc;
   }, {});
 
-
   return (
     <div className="skills-container">
       {Object.keys(skillsByCategory).map((category, index) => (
         <div key={index} className="skill-category">
           <h3 className="category-title">{category}</h3>
           <div className="skills-grid">
-            {skillsByCategory[category].map((skill: any, idx: number) => (
+            {skillsByCategory[category].map((skill: Skill, idx: number) => (
               <div key={idx} className="skill-card">
-                <div className="icon">{iconMap[skill.icon] || <FaReact />}</div>
+                <div className="icon">
+                  {skill.customIcon?.url ? (
+                    <img
+                      src={skill.customIcon.url}
+                      alt={`${skill.name} icon`}
+                      width={40}
+                      height={40}
+                    />
+                  ) : (
+                    iconMap[skill.icon] || <FaReact />
+                  )}
+                </div>
                 <h3 className="skill-name">
-                  {skill.name.split('').map((letter: any, i: number) => (
-                    <span key={i} className="letter" style={{ animationDelay: `${i * 0.05}s` }}>
+                  {skill.name.split("").map((letter, i) => (
+                    <span
+                      key={i}
+                      className="letter"
+                      style={{ animationDelay: `${i * 0.05}s` }}
+                    >
                       {letter}
                     </span>
                   ))}

@@ -13,13 +13,14 @@
 .card-row {
   display: flex;
   gap: 15px;
+  
 }
 
 .pick-card {
   position: relative;
   width: 250px;
   height: 200px;
-  border-radius: 8px;
+  border-radius: 30px;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -30,7 +31,7 @@
 .pick-card:hover {
   transform: scale(1.05);
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5); /* Netflix red glow on hover */
+  box-shadow: 0 8px 20px rgb(155, 2, 2); /* Netflix red glow on hover */
 }
 
 .pick-image {
@@ -70,7 +71,7 @@
 }
 
 .pick-label:hover {
- color: rgb(153, 80, 80);
+ color: rgb(223, 5, 5);
 }
 
 /* Animations */

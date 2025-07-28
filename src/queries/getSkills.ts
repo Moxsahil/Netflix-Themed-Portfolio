@@ -1,6 +1,6 @@
 // queries/getTimeline.ts
-import datoCMSClient from './datoCMSClient';
-import { Skill } from '../types';
+import datoCMSClient from "./datoCMSClient";
+import { Skill } from "../types";
 
 const GET_SKILLS = `
 {
@@ -9,6 +9,9 @@ const GET_SKILLS = `
     category
     description
     icon
+    customIcon {
+      url
+    }
   }
 }
 `;
