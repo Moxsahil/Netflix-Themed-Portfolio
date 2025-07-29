@@ -1,5 +1,5 @@
-import React from 'react';
-import './PlayButton.css';
+import React, { useState } from "react";
+import "./PlayButton.css";
 
 interface PlayButtonProps {
   onClick: () => void;
@@ -7,8 +7,27 @@ interface PlayButtonProps {
 }
 
 const PlayButton: React.FC<PlayButtonProps> = ({ onClick, label = "Play" }) => {
+  const [loaded, setLoaded] = useState(false);
+
+  const handleClick = () => {
+    setLoaded(true); // trigger animation
+
+    // Delay your action until animation finishes
+    setTimeout(() => {
+      onClick(); // run your custom action
+
+      // Reset the animation state so it can be re-triggered
+      setLoaded(false);
+    }, 1000); // Match animation duration (1s)
+  };
+
   return (
-    <button className="play-button" onClick={onClick} type="button">
+    <button
+      className={`play-button ${loaded ? "loaded" : ""}`}
+      onClick={handleClick}
+      type="button"
+    >
+      <div className="bg" />
       <div className="icon-container">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -2,23 +2,42 @@
   display: inline-flex;
   align-items: center;
   padding: 10px 20px;
-  background-color: #ffffff; 
-  color: #fff;
+  background-color: #ffffff;
+  color: #000; /* Ensure default black text */
   font-weight: bold;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .play-button:hover {
-  background-color: grey; /* Darker shade for hover */
+  background-color: grey;
 }
 
-.icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #f0f0f0;
+  transform: translateX(-100%);
+  transition: transform 1s ease;
+  z-index: 0;
+}
+
+.play-button.loaded .bg {
+  transform: translateX(0%);
+}
+
+.icon-container,
+.label {
+  position: relative;
+  z-index: 2; /* Make sure it stays above .bg */
+  color: black; /* Set explicitly to avoid blend issues */
 }
 
 .spacer {
@@ -28,4 +47,15 @@
 .label {
   font-size: 1rem;
   color: black;
+}
+
+/* OPTIONAL: LinkedIn Button Fix */
+.linkedin-button {
+  background-color: #e5e5e5;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
 }
